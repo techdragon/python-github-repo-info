@@ -23,7 +23,7 @@ def read(*names, **kwargs):
 
 
 setup(
-    name='local-github-repo-config',
+    name='github-repo-info',
     version='0.1.0',
     license='BSD',
     description="Provides access to a local GitHub repository's configuration.",
@@ -33,7 +33,7 @@ setup(
     ),
     author='Samuel Bishop',
     author_email='sam@psyx.co',
-    url='https://github.com/techdragon/python-local-github-repo-config',
+    url='https://github.com/techdragon/python-github-repo-info',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -50,7 +50,6 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -66,7 +65,12 @@ setup(
         # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
     install_requires=[
-        # eg: 'aspectlib==1.1.1', 'six>=1.7',
+        'git-repo-info>=0.4.0'
+    ],
+    tests_require=[
+        'tox>=2.7.0',
+        'pytest>=3.1.2',
+        'pytest-git>=1.2.2',
     ],
     extras_require={
         # eg:
